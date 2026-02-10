@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPNsense Firewall Project</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <nav>
+        <div class="logo"><a href="../index.html" style="color:white; text-decoration:none;">← Back to Base</a></div>
+    </nav>
+
+    <div class="project-container">
+        <h1>Dual-Homed Firewall & DNS Filtering</h1>
+        <p style="color:var(--accent); font-family:var(--font-mono); margin-bottom:2rem;">
+            TOOLS: OPNsense, Zenarmor, Unbound DNS, Wazuh
+        </p>
+
+        <h3>1. The Objective</h3>
+        <p>
+            The goal was to move beyond standard ISP security by building a custom perimeter firewall. 
+            I needed granular control over traffic to simulate an enterprise edge network, including 
+            Deep Packet Inspection (DPI) and intrusion detection.
+        </p>
+
+        <img src="../assets/images/firewall-diagram.png" alt="Network Diagram" class="project-img">
+        <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: Network Topology</p>
+        <br>
+
+        <h3>2. Implementation Details</h3>
+        <p>
+            I configured OPNsense on a dedicated appliance with two physical NICs (WAN/LAN). 
+            Using Zenarmor, I created policies to block specific application categories (Ads, Trackers, Adult Content).
+            I also integrated Unbound DNS to prevent DNS tunneling attacks.
+        </p>
+
+        <img src="../assets/images/zenarmor-dashboard.png" alt="Zenarmor Dashboard" class="project-img">
+
+        <h3>3. Challenges & Resolutions</h3>
+        <p>
+            Initially, the strict Zenarmor policies blocked legitimate update traffic for my Linux VMs. 
+            I analyzed the live logs, identified the false positives, and created specific whitelist exceptions 
+            based on the destination IPs.
+        </p>
+
+        <br><hr style="border-color:#334155"><br>
+        
+        <p><strong>Impact:</strong> Achieved 100% visibility into network traffic and blocked 400+ tracking attempts daily.</p>
+    </div>
+
+    <footer>
+        &copy; 2026. <a href="../index.html" style="color:var(--accent)">Return Home</a>
+    </footer>
+
+</body>
+</html>

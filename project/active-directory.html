@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Directory Hardening</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><a href="../index.html" style="color:white; text-decoration:none;">← Back to Base</a></div>
+    </nav>
+
+    <div class="project-container">
+        <h1>Enterprise Active Directory Lab</h1>
+        <p style="color:var(--accent); font-family:var(--font-mono); margin-bottom:2rem;">
+            STACK: Windows Server 2022, Windows 10/11, Sysmon, Splunk/Wazuh
+        </p>
+
+        <h3>1. The Objective</h3>
+        <p>
+            To simulate a corporate environment, I built a Windows Domain from scratch. 
+            The goal was not just connectivity, but <b>security hardening</b>. I wanted to 
+            understand how attackers move laterally and how to detect them using event logs.
+        </p>
+
+        <img src="../assets/images/ad-architecture.png" alt="AD Diagram" class="project-img">
+        <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: Domain Controller & Endpoint Architecture</p>
+        <br>
+
+        <h3>2. Hardening with Group Policy (GPO)</h3>
+        <p>
+            I deployed a Domain Controller and joined Windows 10/11 workstations to the domain.
+            Key security policies implemented included:
+        </p>
+        <ul style="color:var(--text-secondary); margin-left:1.5rem; margin-bottom:1rem;">
+            <li>Disabling generic accounts and enforcing password complexity.</li>
+            <li>Restricting PowerShell execution to Administrators only.</li>
+            <li>Enabling Audit Process Tracking (Event ID 4688) for command-line logging.</li>
+        </ul>
+
+        <img src="../assets/images/gpo-settings.png" alt="Group Policy Objects" class="project-img">
+
+        <h3>3. Detection & Monitoring</h3>
+        <p>
+            I installed <b>Sysmon</b> on all endpoints to capture detailed telemetry. 
+            These logs were forwarded to my SIEM (Wazuh/Splunk), allowing me to visualize 
+            failed login attempts and flag suspicious process creation in real-time.
+        </p>
+
+        <br><hr style="border-color:#334155"><br>
+        
+        <p><strong>Outcome:</strong> Successfully detected a simulated "Brute Force" attack and isolated the compromised host within 5 minutes.</p>
+    </div>
+
+    <footer>
+        &copy; 2026. <a href="../index.html" style="color:var(--accent)">Return Home</a>
+    </footer>
+
+</body>
+</html>
