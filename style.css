@@ -1,0 +1,157 @@
+/* style.css */
+:root {
+    --bg-color: #0f172a;       /* Deep Blue/Grey Background */
+    --card-bg: #1e293b;        /* Lighter Blue/Grey for Cards */
+    --text-primary: #f8fafc;   /* Almost White */
+    --text-secondary: #94a3b8; /* Muted Grey */
+    --accent: #38bdf8;         /* Cyan/Blue Accent */
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: rgba(15, 23, 42, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #334155;
+}
+
+.logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; }
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero Section (Terminal Vibe) */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.terminal-box {
+    font-family: var(--font-mono);
+    font-size: 1.5rem; /* Not too big */
+    color: var(--accent);
+    margin-bottom: 1rem;
+    min-height: 1.6em; /* Keeps layout stable while typing */
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: var(--accent);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.hero p { color: var(--text-secondary); max-width: 600px; margin-top: 1rem; }
+
+/* Tech Stack */
+.tech-stack {
+    text-align: center;
+    padding: 4rem 5%;
+    background-color: var(--card-bg);
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.badge {
+    background: #334155;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    border: 1px solid #475569;
+}
+
+/* Projects Grid */
+.projects-section { padding: 4rem 5%; }
+.section-title { margin-bottom: 2rem; font-size: 1.8rem; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #334155;
+    text-decoration: none;
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: var(--accent);
+}
+
+.card h3 { color: var(--text-primary); margin-bottom: 0.5rem; }
+.card p { color: var(--text-secondary); font-size: 0.95rem; }
+.card-tag { 
+    display: inline-block; 
+    font-size: 0.75rem; 
+    color: var(--accent); 
+    margin-top: 1rem; 
+    font-family: var(--font-mono);
+}
+
+/* Project Detail Page Styling */
+.project-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 1px solid #334155;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid #334155;
+}

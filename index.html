@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">AFSC 1D7XX</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="terminal-box">
+            <span id="typewriter"></span><span class="cursor">&nbsp;</span>
+        </div>
+        <p>
+            Cyber Defense Operations | Top Secret Clearance | CompTIA Security+<br>
+            Building defensive labs and securing infrastructure in Orlando, FL.
+        </p>
+    </header>
+
+    <section class="tech-stack">
+        <h3>Technical Arsenal</h3>
+        <div class="tech-icons">
+            <span class="badge">OPNsense</span>
+            <span class="badge">Splunk</span>
+            <span class="badge">Wazuh</span>
+            <span class="badge">Active Directory</span>
+            <span class="badge">Linux (RHEL/Debian)</span>
+            <span class="badge">Python</span>
+            <span class="badge">Wireshark</span>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Deployment Log</h2>
+        <div class="grid">
+            
+            <a href="projects/firewall.html" class="card">
+                <h3>Home Lab Firewall</h3>
+                <p>Designed a dual-homed OPNsense firewall with Zenarmor for deep packet inspection and Unbound DNS for filtering.</p>
+                <span class="card-tag">> VIEW CASE STUDY</span>
+            </a>
+
+            <a href="projects/active-directory.html" class="card">
+                <h3>Active Directory Hardening</h3>
+                <p>Deployed a Windows Server 2022 Domain Controller and hardened endpoints using Group Policy Objects (GPOs).</p>
+                <span class="card-tag">> VIEW CASE STUDY</span>
+            </a>
+
+            <a href="projects/switch-upgrade.html" class="card">
+                <h3>Infrastructure Upgrade</h3>
+                <p>Assisted in a Wing-wide network refresh, replacing switch infrastructure to improve throughput and reliability.</p>
+                <span class="card-tag">> VIEW CASE STUDY</span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Ready to secure your network?</p>
+        <p>Email: your.email@example.com | <a href="#" style="color:var(--accent)">LinkedIn</a> | <a href="#" style="color:var(--accent)">GitHub</a></p>
+        <br>
+        <p>&copy; 2026. Built with HTML/CSS.</p>
+    </footer>
+
+    <script>
+        const text = "Initializing Cyber Defense Sequence...";
+        const speed = 50; // typing speed in ms
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
