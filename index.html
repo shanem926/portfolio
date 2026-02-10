@@ -10,7 +10,7 @@
 <body>
 
     <nav>
-        <div class="logo">AFSC 1D7XX</div>
+        <div class="logo"> Shane Mack | Cybersecurity Operations Specialist</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="#projects">Projects</a>
@@ -23,8 +23,7 @@
             <span id="typewriter"></span><span class="cursor">&nbsp;</span>
         </div>
         <p>
-            Cyber Defense Operations | Top Secret Clearance | CompTIA Security+<br>
-            Building defensive labs and securing infrastructure in Orlando, FL.
+            CompTIA Security+ certified cybersecurity professional with an active <strong>Top Secret/SCI clearance</strong>. Bridging the gap between incident response (SOC) and compliance (GRC) through enterprise-grade home labs and real-world cyber defense operations.
         </p>
     </header>
 
@@ -32,12 +31,11 @@
         <h3>Technical Arsenal</h3>
         <div class="tech-icons">
             <span class="badge">OPNsense</span>
-            <span class="badge">Splunk</span>
             <span class="badge">Wazuh</span>
             <span class="badge">Active Directory</span>
-            <span class="badge">Linux (RHEL/Debian)</span>
-            <span class="badge">Python</span>
+            <span class="badge">Linux</span>
             <span class="badge">Wireshark</span>
+            <span class="badge"></span>
         </div>
     </section>
 
@@ -73,19 +71,6 @@
         <p>&copy; 2026. Built with HTML/CSS.</p>
     </footer>
 
-    <script>
-        const text = "Initializing Cyber Defense Sequence...";
-        const speed = 50; // typing speed in ms
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-        window.onload = typeWriter;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
